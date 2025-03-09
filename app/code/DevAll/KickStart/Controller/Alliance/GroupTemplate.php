@@ -1,25 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
 namespace DevAll\KickStart\Controller\Alliance;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\View\Result\Page;
-use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\Exception\NotFoundException;
 
 class GroupTemplate implements HttpGetActionInterface
 {
-    public function __construct(
-        private readonly PageFactory $pageFactory,
-    ) {
-    }
-
     /**
-     * @return Page
+     * Execute action based on request and return result
+     *
+     * @return ResultInterface|ResponseInterface
+     * @throws NotFoundException
      */
-    public function execute(): Page
+    public function execute()
     {
-        return $this->pageFactory->create();
+        // TODO: Implement execute method.
     }
 }
