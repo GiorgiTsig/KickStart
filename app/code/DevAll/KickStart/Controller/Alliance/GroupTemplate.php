@@ -3,20 +3,21 @@
 namespace DevAll\KickStart\Controller\Alliance;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\App\ResponseInterface;
-use Magento\Framework\Controller\ResultInterface;
-use Magento\Framework\Exception\NotFoundException;
+use Magento\Framework\Controller\Result\Redirect;
+use Magento\Framework\Controller\Result\RedirectFactory;
 
 class GroupTemplate implements HttpGetActionInterface
 {
+    public function __construct(
+        private readonly RedirectFactory $redirectFactory,
+    ) {}
+
     /**
-     * Execute action based on request and return result
-     *
-     * @return ResultInterface|ResponseInterface
-     * @throws NotFoundException
+     * @return Redirect
      */
-    public function execute()
+    public function execute(): Redirect
     {
-        // TODO: Implement execute method.
+        $redirect = $this->redirectFactory->create();
+        return $redirect->setPath('*/Alliance/Group');
     }
 }
