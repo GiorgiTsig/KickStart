@@ -12,6 +12,7 @@
         <referenceContainer name="sidebar.additional">
             <block name="right.group.devAll" template="DevAll_KickStart::list.phtml"/>
             <block name="sidebar.custom" template="DevAll_KickStart::sidebar.phtml"/>
+            <block name="sidebar.signUp" template="DevAll_KickStart::signUp.phtml"/>
         </referenceContainer>
         <move element="right.group.devAll" destination="sidebar.additional" before="wishlist_sidebar"/>
         <referenceBlock name="wishlist_sidebar" remove="true"/>
