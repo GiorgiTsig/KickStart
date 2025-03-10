@@ -3,7 +3,7 @@
         "column": {
             "id": true,
             "name": true,
-            "pass": true
+            "password": true
         },
         "constraint": {
             "PRIMARY": true
