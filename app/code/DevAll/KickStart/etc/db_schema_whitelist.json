@@ -1,0 +1,12 @@
+{
+    "registration": {
+        "column": {
+            "id": true,
+            "name": true,
+            "pass": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
