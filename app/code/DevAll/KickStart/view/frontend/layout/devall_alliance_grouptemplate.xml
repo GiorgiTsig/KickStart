@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <block name="group.devAll" template="DevAll_KickStart::list.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.main">
+            <block name="main.group.devAll" template="DevAll_KickStart::list.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block name="right.group.devAll" template="DevAll_KickStart::list.phtml"/>
+            <block name="sidebar.custom" template="DevAll_KickStart::sidebar.phtml"/>
+        </referenceContainer>
+        <move element="right.group.devAll" destination="sidebar.additional" before="wishlist_sidebar"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" template="DevAll_KickStart::product/compare/sidebar.phtml"/>
+    </body>
+</page>
