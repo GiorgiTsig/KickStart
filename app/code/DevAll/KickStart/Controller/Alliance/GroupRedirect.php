@@ -6,7 +6,7 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Controller\Result\RedirectFactory;
 
-class GroupTemplate implements HttpGetActionInterface
+class GroupRedirect implements HttpGetActionInterface
 {
     public function __construct(
         private readonly RedirectFactory $redirectFactory,
