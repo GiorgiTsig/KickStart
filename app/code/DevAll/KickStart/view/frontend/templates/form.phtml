@@ -1,8 +1,40 @@
-<form method="post" action="">
-    <label for="name">name:</label><br>
-    <input type="text" id="name" name="name""><br>
-    <br>
-    <label for="pwd">pass:</label>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+?>
+<form id="sign-up-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="pass">Password:</label>
+    <input type="text" id="pass" name="pass"><br><br>
+
+    <button type="submit">Submit</button>
 </form>
+
+<script>
+    require(['jquery'], function ($) {
+        $('#sign-up-form').on('submit', function (e) {
+            e.preventDefault();
+
+            var formData = {
+                "signUp": {
+                    "name": $('#name').val(),
+                    "password": $('#pass').val()
+                }
+            };
+
+            $.ajax({
+                url: '<?= $block->getUrl("rest/V1/sign_up") ?>',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (response) {
+                    alert("User registered successfully!");
+                },
+                error: function (xhr, status, error) {
+                    alert("Error: " + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
