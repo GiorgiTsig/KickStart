@@ -1,0 +1,9 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var DevAll\KickStart\ViewModel\AccountName $viewModel */
+
+$viewModel = $block->getData('view_model');
+?>
+<div>
+    <h1>Last Name: <?= $viewModel->getAccountName(1) ?>  </h1>
+</div>

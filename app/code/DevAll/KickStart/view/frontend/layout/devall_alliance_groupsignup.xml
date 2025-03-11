@@ -6,5 +6,8 @@
         <referenceContainer name="main">
             <block class="Magento\Framework\View\Element\Template" name="form" template="DevAll_KickStart::form.phtml"/>
         </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="last" template="DevAll_KickStart::firstAccount.phtml"/>
+        </referenceContainer>
     </body>
 </page>
