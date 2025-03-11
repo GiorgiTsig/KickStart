@@ -3,4 +3,8 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="DevAll\KickStart\Api\Data\SignUpInterface" type="DevAll\KickStart\Model\SignUp" />
     <preference for="DevAll\KickStart\Api\SignUpRepositoryInterface" type="DevAll\KickStart\Model\SignUpRepository" />
+    <type name="DevAll\KickStart\Model\SignUpRepository">
+        <plugin name="nameChanger"
+                type="DevAll\KickStart\Plugin\ChangeCustomerName"/>
+    </type>
 </config>
